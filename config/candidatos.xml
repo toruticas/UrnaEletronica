@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<candidatos>
+    <candidato>
+        <codigo>13</codigo>
+        <nome>Dilma Rousseff</nome>
+        <partido>PT</partido>
+        <votos>0</votos>
+    </candidato>
+    <candidato>
+        <codigo>45</codigo>
+        <nome>Aécio Neves</nome>
+        <partido>PSD</partido>
+        <votos>0</votos>
+    </candidato>
+    <candidato>
+        <codigo>40</codigo>
+        <nome>Marina Silva</nome>
+        <partido>PSB</partido>
+        <votos>0</votos>
+    </candidato>
+    <candidato>
+        <codigo>50</codigo>
+        <nome>Luciana Genro</nome>
+        <partido>PSO</partido>
+        <votos>0</votos>
+    </candidato>
+    <candidato>
+        <codigo>20</codigo>
+        <nome>Pastor Everaldo</nome>
+        <partido>PSC</partido>
+        <votos>0</votos>
+    </candidato>
+    <candidato>
+        <codigo>43</codigo>
+        <nome>Eduardo Jorge</nome>
+        <partido>PV</partido>
+        <votos>0</votos>
+    </candidato>
+    <candidato>
+        <codigo>28</codigo>
+        <nome>Levy Fidelix</nome>
+        <partido>PRT</partido>
+        <votos>0</votos>
+    </candidato>
+    <candidato>
+        <codigo>16</codigo>
+        <nome>Zé Maria</nome>
+        <partido>PST</partido>
+        <votos>0</votos>
+    </candidato>
+    <candidato>
+        <codigo>27</codigo>
+        <nome>Eymael</nome>
+        <partido>PSD</partido>
+        <votos>0</votos>
+    </candidato>
+    <candidato>
+        <codigo>21</codigo>
+        <nome>Mauro lasi</nome>
+        <partido>PCB</partido>
+        <votos>0</votos>
+    </candidato>
+    <candidato>
+        <codigo>29</codigo>
+        <nome>Rui Costa Pimenta</nome>
+        <partido>PCO</partido>
+        <votos>0</votos>
+    </candidato>
+</candidatos>
