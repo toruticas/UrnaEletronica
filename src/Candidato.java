@@ -32,6 +32,6 @@ public class Candidato {
     }
 
     public String toString() {
-        return "#" + codigo + "|" + partido + "|" + nome;
+        return codigo + "," + partido + "," + nome;
     }
 }
