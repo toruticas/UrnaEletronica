@@ -6,7 +6,12 @@ import java.util.List;
 
 public class Colegiado {
     private static Colegiado instancia;
+    private Integer brancos = 0;
+    private Integer nulos = 0;
     protected Map<Integer,Candidato> candidatos;
+
+    public static int VOTO_BRANCO = 9999;
+    public static int VOTO_NULO = 9998;
 
     Colegiado() {
         candidatos = new HashMap<Integer,Candidato>();
@@ -42,6 +47,9 @@ public class Colegiado {
             );
         }
         System.out.print("-----------------------------------------------\n");
+        System.out.format("| BRANCOS                             | %5d |\n", brancos);
+        System.out.format("| NULOS                               | %5d |\n", nulos	);
+        System.out.print("-----------------------------------------------\n");
     }
 
     public void putCandidato(Candidato candidato) {
@@ -57,7 +65,13 @@ public class Colegiado {
     }
 
     public void computarVotos(Integer codigo, Integer numeroVotos) {
-        Candidato candidato = candidatos.get(codigo);
-        candidato.adicionarVotos(numeroVotos);
+        if (codigo == VOTO_BRANCO) {
+            brancos += numeroVotos;
+        } else if (codigo == VOTO_NULO) {
+            nulos += numeroVotos;
+        } else {
+            Candidato candidato = candidatos.get(codigo);
+            candidato.adicionarVotos(numeroVotos);
+        }
     }
 }
