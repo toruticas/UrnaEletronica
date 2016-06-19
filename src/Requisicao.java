@@ -89,7 +89,7 @@ public class Requisicao extends Thread {
         output.writeBytes("000\nOpcode deve ser 999 ou 888.\n\r");
     }
 
-    protected void gerarLog(Date inicio, SocketAddress socket, Integer opcode) {
+    protected synchronized void gerarLog(Date inicio, SocketAddress socket, Integer opcode) {
         try {
             log.write("Started " + opcode + " for " + socket + " at " +
                 inicio + " and Processed in " +
