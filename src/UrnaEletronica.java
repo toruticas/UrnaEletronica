@@ -1,5 +1,10 @@
 import java.io.*;
 import java.net.*;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.Date;
@@ -23,13 +28,22 @@ public class UrnaEletronica {
         Timer timer = new Timer();
         timer.schedule(new Parciais(), 0, loader.getTemporizador());
 
+        Path logPath = Paths.get("log/requests.txt");
+        // Create file if it doesn't exist
+        if (! Files.exists(logPath)) {
+            Files.createDirectories(logPath.getParent());
+            Files.createFile(logPath);
+        }
+        BufferedWriter log = Files.newBufferedWriter(
+            logPath, StandardCharsets.UTF_8, StandardOpenOption.APPEND);
+
         while(true) {
             try {
                 socket = servidor.accept();
             } catch (IOException e) {
                 System.out.println("I/O error: " + e);
             }
-            new Requisicao(socket).start();
+            new Requisicao(socket, log).start();
         }
     }
 }
