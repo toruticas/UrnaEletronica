@@ -16,11 +16,12 @@ public class UrnaEletronica {
 
         ServerSocket servidor = null;
         Socket socket = null;
+        Integer porta = loader.getPorta();
 
         try {
-            servidor = new ServerSocket(loader.getPorta());
+            servidor = new ServerSocket(porta);
             System.out.print("\033[H\033[2J");
-            System.out.println("Este processo foi aberto na porta 7564.");
+            System.out.format("Este processo foi aberto na porta %d.", porta);
         } catch(IOException exception) {
             exception.printStackTrace();
         }
