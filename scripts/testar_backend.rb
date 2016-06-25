@@ -1,5 +1,6 @@
 # este script teste o backend através do netcat
-candidatos = [13, 45, 40, 50, 20, 43, 28, 16, 27, 21, 29]
+candidatos = [13, 45, 40, 50, 20, 43, 28, 16, 27, 21, 29,
+              9998, 9999]
 while true
     aux = "888\n"
     candidatos.each { |e| aux += "#{e}|#{rand(0..100)}\n" }

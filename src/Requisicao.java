@@ -9,10 +9,12 @@ public class Requisicao extends Thread {
     protected InputStream input;
     protected DataOutputStream output;
     protected BufferedReader buffer;
+    protected BufferedWriter log;
 
-    Requisicao(Socket socket) {
+    Requisicao(Socket socket, BufferedWriter log) {
         this.socket = socket;
         this.opcode = 0;
+        this.log = log;
     }
 
     public void run() {
@@ -87,15 +89,13 @@ public class Requisicao extends Thread {
         output.writeBytes("000\nOpcode deve ser 999 ou 888.\n\r");
     }
 
-    protected void gerarLog(Date inicio, SocketAddress socket, Integer opcode) {
-        FileWriter writer = null;
-
+    protected synchronized void gerarLog(Date inicio, SocketAddress socket, Integer opcode) {
         try {
-            writer = new FileWriter("log/requests.txt", true);
-            writer.write("Started " + opcode + " for " + socket + " at " +
+            log.write("Started " + opcode + " for " + socket + " at " +
                 inicio + " and Processed in " +
                 ((new Date()).getTime() - inicio.getTime()) + "ms\n");
-            writer.close();
+            // Flush ASAP so we will not loose log on a crash
+            log.flush();
         } catch ( IOException e ) {
             System.out.println(e);
         }

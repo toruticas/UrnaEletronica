@@ -3,6 +3,7 @@ CC=javac
 all: movefiles
 
 movefiles: generateJar
+	mkdir -p bin
 	mv *.class bin/
 
 generateJar: compile

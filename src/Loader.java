@@ -12,7 +12,7 @@ public class Loader {
     private String arquivoCandidatos; // nome do arquivo
 
     Loader(String[] args) {
-        this.porta = 2202;
+        this.porta = 40008;
         this.temporizador = 250;
         this.arquivoCandidatos = new String("config/candidatos.xml");
         carregarCandidatos();
